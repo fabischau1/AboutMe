@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fabischau</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0a0a0a; /* Dunkler Hintergrund */
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden; /* Verhindert horizontales Scrollen */
+            text-align: center;
+        }
+
+        header {
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #00ff99; /* Neon-Farbe */
+            text-shadow: 0 0 10px rgba(0, 255, 153, 0.8);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #cccccc; /* Hellerer Text */
+        }
+
+        section {
+            padding: 40px 20px;
+            background-color: #1e1e1e;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+            opacity: 0; /* Startet unsichtbar */
+            transform: translateY(20px); /* Verschieben für den Einstieg */
+            animation: fadeInUp 1s forwards; /* Animation beim Laden */
+        }
+
+        section:nth-of-type(1) { animation-delay: 0.5s; } /* Verzögerung für About Me */
+        section:nth-of-type(2) { animation-delay: 1s; } /* Verzögerung für My Projects */
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #00ff99; /* Neon-Farbe */
+            text-shadow: 0 0 10px rgba(0, 255, 153, 0.8);
+        }
+
+        .about, .project {
+            background: #2c2c2c;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px 0;
+            width: 80%;
+            max-width: 600px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            opacity: 0; /* Startet unsichtbar */
+            transform: translateY(20px); /* Verschieben für den Einstieg */
+            animation: fadeInUp 0.5s forwards; /* Animation für jedes Projekt */
+        }
+
+        .about {
+            animation-delay: 1.5s; /* Verzögerung für About */
+        }
+
+        .project {
+            animation-delay: 2s; /* Verzögerung für Projekte */
+        }
+
+        .project:nth-of-type(1) { animation-delay: 2.5s; } /* Verzögerung für jedes Projekt */
+        .project:nth-of-type(2) { animation-delay: 3s; }
+        .project:nth-of-type(3) { animation-delay: 3.5s; }
+        .project:nth-of-type(4) { animation-delay: 4s; }
+
+        .about:hover, .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0, 255, 153, 0.3);
+        }
+
+        .icon-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .icon-button {
+            position: relative;
+            margin: 10px;
+            width: 50px; /* Größe der Icons */
+            height: 50px; /* Größe der Icons */
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .icon-button img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+        .icon-label {
+            display: none; /* Standardmäßig verstecken */
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #00ff99; /* Neon-Farbe */
+            font-size: 1rem;
+            text-shadow: 0 0 5px rgba(0, 255, 153, 0.5);
+        }
+
+        .icon-button:hover img {
+            transform: scale(1.1); /* Vergrößern beim Hover */
+            filter: drop-shadow(0 0 20px rgba(0, 255, 153, 0.8)); /* Neon-Schimmer */
+        }
+
+        .icon-button:hover .icon-label {
+            display: block; /* Label beim Hover anzeigen */
+        }
+
+        footer {
+            margin-top: 20px; /* Abstand zum Footer */
+            padding: 20px 0;
+            color: #cccccc;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px); /* Startposition */
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0); /* Endposition */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to fabischaus webside</h1>
+        <p>this is my webside</p>
+        <a href="#about" class="btn">About me</a>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about">
+            <p>I am a developer who codes Javascript and Python and is interested in cyber security, web development and more. I am German and my discord is .fabischau. you can talk to me if u want. my virustotal / youtube / websides / discord / redit are linked at the end of the webside.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>My Projects</h2>
+        <div class="project" onclick="window.open('https://fabischau1.github.io/FMOS/', '_blank')">
+            <h3>FMOS</h3>
+            <p>A Modern Webos that is made in javascript.</p>
+        </div>
+        <div class="project" onclick="window.open('https://fabischau1.github.io/FabiSkript/', '_blank')">
+            <h3>FabiSkript</h3>
+            <p>A small scripting language made in python.</p>
+        </div>
+        <div class="project" onclick="window.open('https://github.com/fabischau1/FMShell/blob/main/install.bat', '_blank')">
+            <h3>FM Shell</h3>
+            <p>A cool customizable windows terminal with custom ui and a custom language and batch and python execution.</p>
+        </div>
+		<div class="project" onclick="window.open('https://fabischau1.github.io/FAAntivira/', '_blank')">
+            <h3>FA AntiVira </h3>
+            <p>A small Anti Virus.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Sotial Profiles</h2>
+        <div class="icon-buttons">
+            <div class="icon-button" onclick="window.open('https://discord.gg/NE6ZzPzYQT', '_blank')">
+                <img src="internet.svg" alt="Discord">
+                <span class="icon-label">Discord</span>
+            </div>
+            <div class="icon-button" onclick="window.open('https://github.com/fabischau1', '_blank')">
+                <img src="github-mark.svg" alt="GitHub">
+                <span class="icon-label">GitHub</span>
+            </div>
+            <div class="icon-button" onclick="window.open('https://www.virustotal.com/gui/user/fabischau', '_blank')">
+                <img src="internet.svg" alt="VirusTotal">
+                <span class="icon-label">VirusTotal</span>
+            </div>
+            <div class="icon-button" onclick="window.open('https://fabischau1.github.io/FMOS/', '_blank')">
+                <img src="internet.svg" alt="Webseite 1">
+                <span class="icon-label">FMOS</span>
+            </div>
+            <div class="icon-button" onclick="window.open('https://fabischau1.github.io/FAAntivira/', '_blank')">
+                <img src="internet.svg" alt="Webseite 2">
+                <span class="icon-label">FA AntiVira</span>
+            </div>
+            <div class="icon-button" onclick="window.open('https://fabischau1.github.io/FabiSkript/', '_blank')">
+                <img src="internet.svg" alt="Webseite 3">
+                <span class="icon-label">FabiSkript</span>
+            </div>
+            <div class="icon-button" onclick="window.open('https://www.reddit.com/user/Upbeat-Cap-4562/', '_blank')">
+                <img src="internet.svg" alt="Reddit">
+                <span class="icon-label">Reddit</span>
+            </div>
+            <div class="icon-button" onclick="window.open('https://www.youtube.com/@fabischau', '_blank')">
+                <img src="internet.svg" alt="YouTube">
+                <span class="icon-label">YouTube</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 fabischau.</p>
+        <a href="#top" class="btn">Nach oben</a>
+    </footer>
+</body>
+</html>
